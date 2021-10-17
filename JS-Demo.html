@@ -2,11 +2,81 @@
     <head>JavaScrpit Tutorial</head>
 
     <body>
-        <p id="demos"></p>
+        <p id="demo"></p>
+        'Demo_objects'
+        <p id="Demo_objects"></p>
     </body>
     <script>
+        let cars = ["BMW",'Volvo', 'Honda'];
+        document.getElementById("demo").innerHTML = cars;
         
+        let bmw = cars[0];
+        document.getElementById("demo").innerHTML = bmw;
+
+        let len = cars.length;
+        document.getElementById("demo").innerHTML = len;
+
+        let last = cars[cars.length -1];
+        document.getElementById("demo").innerHTML = last;
+
+        cars.forEach((item,i,arr) => {console.log(item, i);});
+
+        document.getElementById("demo").innerHTML = cars;
+
+
+        //Objects
+        var student={
+            Name: 'John',
+            Age: 21,
+            Class: "11c ",
+        };
+
+        document.getElementById('Demo_objects').innerHTML = student.Name +" "+ student.Age + ' years old.'
+
+        var student2 = new Object();
+        student2.Name='chris';
+        student2.Age=25;
+
+
+        document.getElementById('Demo_objects').innerHTML = student2.Name +" "+ student2.Age + ' years old.'
+
+        //using functions
+
+        function stud(name,age,study){
+            this.name = name;
+            this.age = age;
+            this.study = study;
+
+        }
+        var student3 = new stud("jen", 19 , 'IT');
+        document.getElementById('Demo_objects').innerHTML = student3.name +" "+ student3.age + ' years old & field of study is ' + student3.study + ' .';
+
+
+        var student4={
+            Name: 'John',
+            Age: "",
+            Class: "11c ",
+            set setage(age){
+                this.age=age;
+
+            }
+        };
+
+        document.getElementById('Demo_objects').innerHTML = student4.Name +" "+ student4.Age + ' years old.'
+
+
+        student4.setage = "12";
+
+        document.getElementById('Demo_objects').innerHTML = student4.Name +" "+ student4.age + ' years old.'
+
+        
+
+        //stopped at 1.46.45
+
     </script>
+
+
+
 
 
 </html>
